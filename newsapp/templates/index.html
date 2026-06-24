@@ -204,13 +204,13 @@
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link text-white" href="#"
-                ><i class="fas fa-fire"></i> Tendencias</a
+              <a class="nav-link text-white" href="https://github.com/Kenkyoo?tab=repositories"
+                ><i class="fas fa-fire"></i> Project</a
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link text-white" href="#"
-                ><i class="fas fa-clock"></i> Últimas</a
+              <a class="nav-link text-white" href="https://github.com/Kenkyoo?"
+                ><i class="fas fa-clock"></i> Github</a
               >
             </li>
             <li class="nav-item">
@@ -243,7 +243,7 @@
     <!-- Main Content -->
     <div class="container">
       <div class="row">
-        {% for title, desc, img in mylist %}
+        {% for title, desc, img, url in mylist %}
         <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
           <div class="card news-card">
             {% if img %}
@@ -269,8 +269,7 @@
             <div class="card-body">
               <h5 class="card-title">{{ title }}</h5>
               <p class="card-text">
-                {{ desc|default:"Sin descripción disponible"|truncatechars:120
-                }}
+                {{ desc|default:"Sin descripción disponible"|truncatechars:120 }}
               </p>
             </div>
             <div class="card-footer">
@@ -278,7 +277,7 @@
                 <small class="text-muted">
                   <i class="far fa-clock"></i> Hace 2 horas
                 </small>
-                <a href="#" class="btn btn-read-more btn-sm">
+                <a href="{{ url }}" target="_blank" class="btn btn-read-more btn-sm">
                   Leer más <i class="fas fa-arrow-right ms-1"></i>
                 </a>
               </div>
@@ -296,17 +295,6 @@
         </div>
         {% endfor %}
       </div>
-
-      <!-- Load More Button -->
-      <div class="text-center my-5">
-        <button
-          class="btn btn-outline-primary btn-lg px-5 py-3 rounded-pill"
-          style="border-color: #e94560; color: #e94560"
-        >
-          <i class="fas fa-sync-alt me-2"></i> Cargar más noticias
-        </button>
-      </div>
-    </div>
 
     <!-- Footer -->
     <footer class="footer-custom">

@@ -15,12 +15,14 @@ def index(request):
     desc =[]
     news =[]
     img =[]
+    url =[]
 
     for i in range(len(l)):
         f = l[i]
         news.append(f['title'])
         desc.append(f['description'])
         img.append(f['urlToImage'])
-    mylist = zip(news, desc, img)
+        url.append(f['url'])
+    mylist = zip(news, desc, img, url)
 
     return render(request, 'index.html', context ={"mylist":mylist})
